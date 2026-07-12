@@ -30,23 +30,21 @@ export function HomeProducts() {
             rel="noopener noreferrer"
             className={`group block border-t border-nor-black/8 transition-colors ${
               product.dark
-                ? "bg-nor-black hover:bg-nor-black/95"
+                ? "bg-nor-warm-dark hover:bg-nor-warm-mid"
                 : "bg-nor-off-white hover:bg-nor-white"
             }`}
           >
-            <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 md:grid-cols-2 md:items-center md:gap-20 md:px-12 md:py-28 lg:px-16 lg:py-36">
+            <div className="mx-auto grid max-w-7xl gap-8 px-5 py-16 sm:gap-10 sm:px-6 sm:py-20 md:grid-cols-2 md:items-center md:gap-20 md:px-12 md:py-28 lg:px-16 lg:py-36">
               <div>
                 <ProductMark
                   name={product.name}
                   logo={product.logo}
                   accent={product.accent}
+                  text={product.text}
                   size="lg"
-                  onDark={product.dark}
                 />
                 <p
-                  className={`mt-6 text-sm font-medium uppercase tracking-[0.2em] ${
-                    product.dark ? "text-nor-yellow" : "text-nor-muted"
-                  }`}
+                  className={`mt-6 text-sm font-medium uppercase tracking-[0.2em] ${product.taglineColor}`}
                 >
                   {product.tagline}
                 </p>
@@ -54,25 +52,21 @@ export function HomeProducts() {
 
               <div>
                 <h3
-                  className={`font-serif text-3xl font-light tracking-tight md:text-4xl lg:text-5xl ${
-                    product.dark ? "text-nor-white" : "text-nor-black"
+                  className={`font-serif text-2xl font-light tracking-tight sm:text-3xl md:text-4xl lg:text-5xl ${
+                    product.dark ? "text-nor-cream" : "text-nor-black"
                   }`}
                 >
                   {product.name}
                 </h3>
                 <p
-                  className={`mt-6 text-lg leading-relaxed md:text-xl ${
-                    product.dark ? "text-nor-white/65" : "text-nor-muted"
+                  className={`mt-4 text-base leading-relaxed sm:mt-6 sm:text-lg md:text-xl ${
+                    product.dark ? "text-nor-cream/70" : "text-nor-muted"
                   }`}
                 >
                   {product.longDescription}
                 </p>
                 <span
-                  className={`mt-10 inline-flex items-center gap-3 text-sm font-medium tracking-wide transition-all group-hover:gap-4 ${
-                    product.dark
-                      ? "text-nor-white group-hover:text-nor-yellow"
-                      : "text-nor-black group-hover:text-nor-yellow"
-                  }`}
+                  className={`mt-8 inline-flex items-center gap-3 text-sm font-medium tracking-wide text-nor-black transition-all group-hover:gap-4 sm:mt-10 ${product.linkHover}`}
                 >
                   Visit {product.name}
                   <span aria-hidden="true">→</span>

@@ -8,12 +8,15 @@ export const products = [
     longDescription:
       "DOOP supports dietitians through their daily clinical work — helping with assessments, meal planning, and evidence-based recommendations while keeping the practitioner firmly in control.",
     href: "https://doop.nororg.com",
-    accent: "bg-nor-black",
+    accent: "bg-doop-green",
     surface: "bg-nor-off-white",
-    text: "text-nor-black",
-    border: "border-nor-black/10",
-    hover: "hover:border-nor-black/30 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.2)]",
-    dark: true,
+    text: "text-doop-green",
+    taglineColor: "text-doop-green",
+    linkHover: "group-hover:text-doop-green",
+    border: "border-doop-green/15",
+    hover:
+      "hover:border-doop-green/35 hover:shadow-[0_20px_60px_-15px_rgba(10,77,60,0.18)]",
+    dark: false,
   },
   {
     name: "LEAP",
@@ -24,11 +27,14 @@ export const products = [
     longDescription:
       "LEAP helps consumers scan packaged foods and make sense of ingredient lists, additives, and nutritional claims — turning complexity into clarity at the point of purchase.",
     href: "https://leap.nororg.com",
-    accent: "bg-nor-yellow",
-    surface: "bg-nor-white",
-    text: "text-nor-black",
-    border: "border-nor-yellow/30",
-    hover: "hover:border-nor-yellow hover:shadow-[0_20px_60px_-15px_rgba(235,203,90,0.35)]",
+    accent: "bg-leap-blue",
+    surface: "bg-leap-blue-light",
+    text: "text-leap-blue",
+    taglineColor: "text-leap-blue",
+    linkHover: "group-hover:text-leap-blue",
+    border: "border-leap-blue/20",
+    hover:
+      "hover:border-leap-blue/50 hover:shadow-[0_20px_60px_-15px_rgba(43,92,219,0.2)]",
     dark: false,
   },
 ] as const;

@@ -38,9 +38,12 @@ export function Products({ showIntro = true }: ProductsProps) {
                     name={product.name}
                     logo={product.logo}
                     accent={product.accent}
+                    text={product.text}
                     size="lg"
                   />
-                  <p className="mt-6 text-sm font-medium uppercase tracking-[0.2em] text-nor-muted">
+                  <p
+                    className={`mt-6 text-sm font-medium uppercase tracking-[0.2em] ${product.taglineColor}`}
+                  >
                     {product.tagline}
                   </p>
                 </div>
@@ -49,7 +52,9 @@ export function Products({ showIntro = true }: ProductsProps) {
                   <p className="text-lg leading-relaxed text-nor-muted md:text-xl">
                     {product.longDescription}
                   </p>
-                  <span className="mt-10 inline-flex items-center gap-3 text-sm font-medium tracking-wide text-nor-black transition-all group-hover:gap-4 group-hover:text-nor-yellow">
+                  <span
+                    className={`mt-10 inline-flex items-center gap-3 text-sm font-medium tracking-wide text-nor-black transition-all group-hover:gap-4 ${product.linkHover}`}
+                  >
                     Visit {product.name}
                     <span aria-hidden="true">→</span>
                   </span>

@@ -4,16 +4,28 @@
   --nor-black: #0a0a0a;
   --nor-white: #ffffff;
   --nor-off-white: #f5f5f5;
+  --nor-warm-dark: #2c2a26;
+  --nor-warm-mid: #3a3834;
+  --nor-cream: #f9f7f2;
   --nor-muted: #6b6b6b;
   --nor-yellow: #ebcb5a;
+  --doop-green: #0a4d3c;
+  --leap-blue: #2b5cdb;
+  --leap-blue-light: #eef3fc;
 }
 
 @theme inline {
   --color-nor-black: #0a0a0a;
   --color-nor-white: #ffffff;
   --color-nor-off-white: #f5f5f5;
+  --color-nor-warm-dark: #2c2a26;
+  --color-nor-warm-mid: #3a3834;
+  --color-nor-cream: #f9f7f2;
   --color-nor-muted: #6b6b6b;
   --color-nor-yellow: #ebcb5a;
+  --color-doop-green: #0a4d3c;
+  --color-leap-blue: #2b5cdb;
+  --color-leap-blue-light: #eef3fc;
   --font-serif: var(--font-newsreader);
   --font-sans: var(--font-dm-sans);
 }

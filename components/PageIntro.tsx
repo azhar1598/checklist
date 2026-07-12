@@ -10,7 +10,7 @@ type PageIntroProps = {
 export function PageIntro({ label, title, description, dark = false }: PageIntroProps) {
   return (
     <section
-      className={`border-b border-nor-black/8 px-6 pb-20 pt-36 md:px-12 md:pb-28 md:pt-48 lg:px-16 ${
+      className={`border-b border-nor-black/8 px-5 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-36 md:px-12 md:pb-28 md:pt-48 lg:px-16 ${
         dark ? "bg-nor-black" : "bg-nor-off-white"
       }`}
     >
