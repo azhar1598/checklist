@@ -16,7 +16,6 @@ export const products = [
     border: "border-doop-green/15",
     hover:
       "hover:border-doop-green/35 hover:shadow-[0_20px_60px_-15px_rgba(10,77,60,0.18)]",
-    dark: false,
   },
   {
     name: "LEAP",
@@ -35,6 +34,5 @@ export const products = [
     border: "border-leap-blue/20",
     hover:
       "hover:border-leap-blue/50 hover:shadow-[0_20px_60px_-15px_rgba(43,92,219,0.2)]",
-    dark: false,
   },
 ] as const;

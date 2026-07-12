@@ -34,6 +34,12 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   background: var(--nor-white);
   color: var(--nor-black);
@@ -42,6 +48,24 @@ body {
 
 ::selection {
   background: color-mix(in srgb, var(--nor-yellow) 40%, transparent);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--nor-yellow);
+  outline-offset: 3px;
+}
+
+.section-x {
+  padding-inline: clamp(1.25rem, 4vw, 4rem);
+}
+
+.section-y {
+  padding-block: clamp(5rem, 10vw, 11rem);
+}
+
+.section-y-tight {
+  padding-block: clamp(3rem, 6vw, 5rem);
 }
 
 .fade-in {
@@ -55,6 +79,14 @@ body {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 .fade-in-delay-1 {

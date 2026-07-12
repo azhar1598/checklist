@@ -75,7 +75,7 @@ export function Header() {
     }
 
     return active
-      ? "text-nor-black"
+      ? "text-nor-black underline decoration-nor-yellow decoration-2 underline-offset-4"
       : "text-nor-muted hover:text-nor-black";
   };
 

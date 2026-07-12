@@ -3,7 +3,7 @@ import { FadeIn } from "./FadeIn";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[92svh] items-center overflow-hidden bg-nor-cream px-5 pt-24 pb-20 sm:px-6 sm:pt-28 sm:pb-24 md:px-12 md:pt-32 lg:px-16">
+    <section className="relative flex min-h-[88svh] items-center overflow-hidden bg-nor-cream section-x pt-24 pb-16 sm:min-h-[92svh] sm:pt-28 sm:pb-20 md:pt-32 lg:pt-36">
       <div
         className="pointer-events-none absolute inset-0"
         style={{

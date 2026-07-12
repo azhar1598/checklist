@@ -6,7 +6,6 @@ type ProductMarkProps = {
   accent: string;
   text?: string;
   size?: "sm" | "md" | "lg";
-  onDark?: boolean;
 };
 
 const sizes = {
@@ -21,7 +20,6 @@ export function ProductMark({
   accent,
   text = "text-nor-black",
   size = "md",
-  onDark = false,
 }: ProductMarkProps) {
   const s = sizes[size];
 
@@ -43,11 +41,7 @@ export function ProductMark({
   return (
     <>
       <div className={`${s.margin} h-1 ${s.bar} rounded-full ${accent}`} />
-      <h3
-        className={`font-serif font-light tracking-tight ${
-          onDark ? "text-nor-cream" : text
-        } ${s.title}`}
-      >
+      <h3 className={`font-serif font-light tracking-tight ${text} ${s.title}`}>
         {name}
       </h3>
     </>

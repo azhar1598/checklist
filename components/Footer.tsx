@@ -13,53 +13,31 @@ const pageLinks = [
   { name: "Contact", href: "/contact" },
 ];
 
-const socialLinks = [
-  {
-    name: "Instagram",
-    href: "https://instagram.com/nororg",
-    icon: (
-      <svg
-        width="18"
-        height="18"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        aria-hidden="true"
-      >
-        <rect x="2" y="2" width="20" height="20" rx="5" />
-        <circle cx="12" cy="12" r="4" />
-        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-      </svg>
-    ),
-  },
-];
-
 export function Footer() {
   return (
-    <footer className="border-t border-nor-white/10 bg-nor-black px-6 py-20 md:px-12 md:py-28 lg:px-16">
+    <footer className="border-t border-nor-black/10 bg-nor-warm-dark section-x py-16 sm:py-20 md:py-24">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-16 md:grid-cols-2 lg:grid-cols-5">
-          <div className="lg:col-span-2">
-            <Logo onDark height={32} />
-            <p className="mt-6 max-w-sm text-base leading-relaxed text-nor-white/50">
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-12 lg:gap-16">
+          <div className="sm:col-span-2 lg:col-span-5">
+            <Logo onDark height={28} />
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-nor-cream/55 sm:mt-6 sm:text-base">
               A design-led studio and product organization building focused tools
               for health, wellness, and everyday life.
             </p>
           </div>
 
-          <div>
-            <p className="text-xs font-medium uppercase tracking-[0.15em] text-nor-white/40">
+          <div className="lg:col-span-2">
+            <p className="text-xs font-medium uppercase tracking-[0.15em] text-nor-cream/40">
               Products
             </p>
-            <ul className="mt-5 space-y-3">
+            <ul className="mt-4 space-y-2.5 sm:mt-5 sm:space-y-3">
               {productLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-nor-white/70 transition-colors hover:text-nor-yellow"
+                    className="text-sm text-nor-cream/70 transition-colors hover:text-nor-yellow"
                   >
                     {link.name}
                   </a>
@@ -68,16 +46,16 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
-            <p className="text-xs font-medium uppercase tracking-[0.15em] text-nor-white/40">
+          <div className="lg:col-span-2">
+            <p className="text-xs font-medium uppercase tracking-[0.15em] text-nor-cream/40">
               Company
             </p>
-            <ul className="mt-5 space-y-3">
+            <ul className="mt-4 space-y-2.5 sm:mt-5 sm:space-y-3">
               {pageLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-nor-white/70 transition-colors hover:text-nor-yellow"
+                    className="text-sm text-nor-cream/70 transition-colors hover:text-nor-yellow"
                   >
                     {link.name}
                   </Link>
@@ -86,28 +64,25 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
-            <p className="text-xs font-medium uppercase tracking-[0.15em] text-nor-white/40">
+          <div className="lg:col-span-3">
+            <p className="text-xs font-medium uppercase tracking-[0.15em] text-nor-cream/40">
               Connect
             </p>
-            <ul className="mt-5 space-y-3">
-              {socialLinks.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-nor-white/70 transition-colors hover:text-nor-yellow"
-                  >
-                    {link.icon}
-                    {link.name}
-                  </a>
-                </li>
-              ))}
+            <ul className="mt-4 space-y-2.5 sm:mt-5 sm:space-y-3">
+              <li>
+                <a
+                  href="https://instagram.com/nororg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-nor-cream/70 transition-colors hover:text-nor-yellow"
+                >
+                  Instagram
+                </a>
+              </li>
               <li>
                 <a
                   href="mailto:hello@nororg.com"
-                  className="text-sm text-nor-white/70 transition-colors hover:text-nor-yellow"
+                  className="text-sm text-nor-cream/70 transition-colors hover:text-nor-yellow"
                 >
                   hello@nororg.com
                 </a>
@@ -116,16 +91,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-20 flex flex-col gap-4 border-t border-nor-white/10 pt-10 text-xs text-nor-white/30 md:flex-row md:items-center md:justify-between">
+        <div className="mt-14 border-t border-nor-cream/10 pt-8 text-xs text-nor-cream/35 sm:mt-16">
           <p>&copy; {new Date().getFullYear()} NoR. All rights reserved.</p>
-          <div className="flex gap-8">
-            <a href="#" className="transition-colors hover:text-nor-white/50">
-              Privacy
-            </a>
-            <a href="#" className="transition-colors hover:text-nor-white/50">
-              Terms
-            </a>
-          </div>
         </div>
       </div>
     </footer>

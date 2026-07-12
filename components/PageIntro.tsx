@@ -4,34 +4,21 @@ type PageIntroProps = {
   label: string;
   title: string;
   description?: string;
-  dark?: boolean;
 };
 
-export function PageIntro({ label, title, description, dark = false }: PageIntroProps) {
+export function PageIntro({ label, title, description }: PageIntroProps) {
   return (
-    <section
-      className={`border-b border-nor-black/8 px-5 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-36 md:px-12 md:pb-28 md:pt-48 lg:px-16 ${
-        dark ? "bg-nor-black" : "bg-nor-off-white"
-      }`}
-    >
+    <section className="border-b border-nor-black/8 bg-nor-off-white section-x pb-16 pt-28 sm:pb-20 sm:pt-36 md:pb-28 md:pt-44">
       <div className="mx-auto max-w-7xl">
         <FadeIn>
           <p className="text-sm font-medium uppercase tracking-[0.25em] text-nor-yellow">
             {label}
           </p>
-          <h1
-            className={`mt-6 max-w-4xl font-serif text-[clamp(2.5rem,6vw,5.5rem)] font-light leading-[1.08] tracking-tight ${
-              dark ? "text-nor-white" : "text-nor-black"
-            }`}
-          >
+          <h1 className="mt-5 max-w-4xl font-serif text-[clamp(2rem,5.5vw,5.5rem)] font-light leading-[1.1] tracking-tight text-nor-black sm:mt-6">
             {title}
           </h1>
           {description && (
-            <p
-              className={`mt-8 max-w-2xl text-lg leading-relaxed md:text-xl ${
-                dark ? "text-nor-white/60" : "text-nor-muted"
-              }`}
-            >
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-nor-muted sm:mt-8 sm:text-lg md:text-xl">
               {description}
             </p>
           )}
