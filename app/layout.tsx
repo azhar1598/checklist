@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { DM_Sans, Newsreader } from "next/font/google";
 import { Footer } from "@/components/Footer";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { Header } from "@/components/Header";
+import { MicrosoftClarity } from "@/components/MicrosoftClarity";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -55,6 +57,8 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <GoogleAnalytics />
+        <MicrosoftClarity />
       </body>
     </html>
   );
