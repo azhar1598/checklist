@@ -1,6 +1,7 @@
 import { Hero } from "@/components/Hero";
 import { HomeContactCTA } from "@/components/HomeContactCTA";
 import { HomeMission } from "@/components/HomeMission";
+import { HomeNewsletter } from "@/components/HomeNewsletter";
 import { HomePhilosophy } from "@/components/HomePhilosophy";
 import { HomePillars } from "@/components/HomePillars";
 import { HomeProducts } from "@/components/HomeProducts";
@@ -16,6 +17,7 @@ export default function Home() {
       <HomeResearch />
       <HomePhilosophy />
       <HomeContactCTA />
+      <HomeNewsletter />
     </>
   );
 }

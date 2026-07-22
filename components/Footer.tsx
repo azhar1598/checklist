@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
+import { NewsletterSignup } from "./NewsletterSignup";
 
 const productLinks = [
   { name: "DOOP", href: "https://doop.nororg.com" },
@@ -91,7 +92,11 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 border-t border-nor-cream/10 pt-8 text-xs text-nor-cream/35 sm:mt-16">
+        <div className="mt-14 border-t border-nor-cream/10 pt-12 sm:mt-16 sm:pt-14">
+          <NewsletterSignup variant="dark" />
+        </div>
+
+        <div className="mt-12 border-t border-nor-cream/10 pt-8 text-xs text-nor-cream/35 sm:mt-14">
           <p>&copy; {new Date().getFullYear()} NoR. All rights reserved.</p>
         </div>
       </div>
