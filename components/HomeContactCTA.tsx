@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FadeIn } from "./FadeIn";
+import { site } from "@/lib/site";
 
 export function HomeContactCTA() {
   return (
@@ -27,10 +28,10 @@ export function HomeContactCTA() {
               </span>
             </Link>
             <a
-              href="mailto:hello@nororg.com"
+              href={site.contactMailto}
               className="text-sm tracking-wide text-nor-muted transition-colors hover:text-nor-black"
             >
-              hello@nororg.com
+              {site.contactEmail}
             </a>
           </div>
         </FadeIn>

@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { Header } from "@/components/Header";
 import { MicrosoftClarity } from "@/components/MicrosoftClarity";
+import { site } from "@/lib/site";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -20,7 +21,7 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nororg.com"),
+  metadataBase: new URL(site.url),
   title: {
     default: "NoR — Design-led products for health and everyday life",
     template: "%s — NoR",

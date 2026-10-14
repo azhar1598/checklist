@@ -1,4 +1,5 @@
 import { approachPoints, researchAreas } from "@/lib/content";
+import { site } from "@/lib/site";
 import { FadeIn } from "./FadeIn";
 import { SectionLabel } from "./SectionLabel";
 
@@ -86,10 +87,10 @@ export function Research() {
                 exploring similar questions, we&apos;d like to hear from you.
               </p>
               <a
-                href="mailto:hello@nororg.com"
+                href={site.contactMailto}
                 className="mt-8 inline-flex items-center gap-3 text-sm font-medium tracking-wide text-nor-black transition-colors hover:text-nor-yellow sm:mt-10"
               >
-                hello@nororg.com
+                {site.contactEmail}
                 <span aria-hidden="true">→</span>
               </a>
             </div>

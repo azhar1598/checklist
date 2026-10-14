@@ -1,3 +1,5 @@
+import { site } from "@/lib/site";
+
 export const products = [
   {
     name: "DOOP",
@@ -7,7 +9,7 @@ export const products = [
       "An AI-powered clinical assistant for dietitians and nutritionists.",
     longDescription:
       "DOOP supports dietitians through their daily clinical work — helping with assessments, meal planning, and evidence-based recommendations while keeping the practitioner firmly in control.",
-    href: "https://doop.nororg.com",
+    href: site.productUrls.doop,
     accent: "bg-doop-green",
     surface: "bg-nor-off-white",
     text: "text-doop-green",
@@ -25,7 +27,7 @@ export const products = [
       "Scan food products and understand what's really in them.",
     longDescription:
       "LEAP helps consumers scan packaged foods and make sense of ingredient lists, additives, and nutritional claims — turning complexity into clarity at the point of purchase.",
-    href: "https://leap.nororg.com",
+    href: site.productUrls.leap,
     accent: "bg-leap-blue",
     surface: "bg-leap-blue-light",
     text: "text-leap-blue",

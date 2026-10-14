@@ -1,13 +1,18 @@
 import Script from "next/script";
-
-const GA_MEASUREMENT_ID = "G-TK530Q1Z3T";
+import { site } from "@/lib/site";
 
 export function GoogleAnalytics() {
+  const measurementId = site.analytics.gaMeasurementId;
+
+  if (!measurementId) {
+    return null;
+  }
+
   return (
     <>
       <Script
         async
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
         strategy="afterInteractive"
       />
       <Script id="google-analytics" strategy="afterInteractive">
@@ -15,7 +20,7 @@ export function GoogleAnalytics() {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${GA_MEASUREMENT_ID}');
+          gtag('config', '${measurementId}');
         `}
       </Script>
     </>

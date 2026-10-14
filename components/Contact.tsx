@@ -1,4 +1,5 @@
 import { FadeIn } from "./FadeIn";
+import { site } from "@/lib/site";
 
 export function Contact() {
   return (
@@ -18,10 +19,10 @@ export function Contact() {
               learn more about NoR — we&apos;d like to hear from you.
             </p>
             <a
-              href="mailto:hello@nororg.com"
+              href={site.contactMailto}
               className="mt-10 inline-flex w-full items-center justify-center gap-3 bg-nor-black px-8 py-3.5 text-sm font-medium tracking-wide text-nor-white transition-colors hover:bg-nor-warm-mid sm:mt-12 sm:w-auto sm:px-10 sm:py-4"
             >
-              hello@nororg.com
+              {site.contactEmail}
             </a>
           </div>
         </FadeIn>

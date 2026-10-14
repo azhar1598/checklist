@@ -1,11 +1,13 @@
 import Link from "next/link";
+import { site } from "@/lib/site";
+import { products } from "@/lib/products";
 import { Logo } from "./Logo";
 import { NewsletterSignup } from "./NewsletterSignup";
 
-const productLinks = [
-  { name: "DOOP", href: "https://doop.nororg.com" },
-  { name: "LEAP", href: "https://leap.nororg.com" },
-];
+const productLinks = products.map((product) => ({
+  name: product.name,
+  href: product.href,
+}));
 
 const pageLinks = [
   { name: "Products", href: "/products" },
@@ -22,8 +24,8 @@ export function Footer() {
           <div className="sm:col-span-2 lg:col-span-5">
             <Logo onDark height={28} />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-nor-cream/55 sm:mt-6 sm:text-base">
-              A design-led studio and product organization building focused tools
-              for health, wellness, and everyday life.
+              A design-led studio and product organization building focused
+              tools for health, wellness, and everyday life.
             </p>
           </div>
 
@@ -70,22 +72,22 @@ export function Footer() {
               Connect
             </p>
             <ul className="mt-4 space-y-2.5 sm:mt-5 sm:space-y-3">
-              <li>
+              {/* <li>
                 <a
-                  href="https://instagram.com/nororg"
+                  href={site.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm text-nor-cream/70 transition-colors hover:text-nor-yellow"
                 >
                   Instagram
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a
-                  href="mailto:hello@nororg.com"
+                  href={site.contactMailto}
                   className="text-sm text-nor-cream/70 transition-colors hover:text-nor-yellow"
                 >
-                  hello@nororg.com
+                  {site.contactEmail}
                 </a>
               </li>
             </ul>

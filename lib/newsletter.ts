@@ -1,3 +1,5 @@
+import { getResendConfig, site } from "@/lib/site";
+
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export function isValidEmail(email: string): boolean {
@@ -8,21 +10,12 @@ export type SubscribeResult =
   | { ok: true; alreadySubscribed?: boolean }
   | { ok: false; error: string };
 
-function getFromAddress(): string {
-  return process.env.RESEND_FROM_EMAIL ?? "NoR <hello@nororg.com>";
-}
-
-function getLogoUrl(): string {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nororg.com";
-  return `${siteUrl.replace(/\/$/, "")}/logo.png`;
-}
-
 function buildWelcomeEmailHtml(): string {
-  const logoUrl = getLogoUrl();
+  const logoUrl = `${site.url}/logo.png`;
 
   return `
     <div style="font-family: Georgia, 'Times New Roman', serif; max-width: 560px; margin: 0 auto; padding: 40px 24px; color: #0a0a0a;">
-      <a href="https://nororg.com" style="display: inline-block; margin: 0 0 28px; text-decoration: none;">
+      <a href="${site.url}" style="display: inline-block; margin: 0 0 28px; text-decoration: none;">
         <img
           src="${logoUrl}"
           alt="NoR"
@@ -37,13 +30,15 @@ function buildWelcomeEmailHtml(): string {
       </p>
       <p style="font-size: 16px; line-height: 1.6; color: #6b6b6b; margin: 0;">
         Until then, explore what we're building at
-        <a href="https://nororg.com/products" style="color: #0a0a0a;">nororg.com</a>.
+        <a href="${site.url}/products" style="color: #0a0a0a;">nororg.com</a>.
       </p>
     </div>
   `;
 }
 
 async function sendWelcomeEmail(email: string, apiKey: string): Promise<void> {
+  const { fromEmail } = getResendConfig();
+
   const response = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
@@ -51,7 +46,7 @@ async function sendWelcomeEmail(email: string, apiKey: string): Promise<void> {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: getFromAddress(),
+      from: fromEmail,
       to: email,
       subject: "Welcome to NoR",
       html: buildWelcomeEmailHtml(),
@@ -65,8 +60,7 @@ async function sendWelcomeEmail(email: string, apiKey: string): Promise<void> {
 }
 
 export async function subscribeToNewsletter(email: string): Promise<SubscribeResult> {
-  const apiKey = process.env.RESEND_API_KEY;
-  const audienceId = process.env.RESEND_AUDIENCE_ID;
+  const { apiKey, audienceId } = getResendConfig();
 
   if (!apiKey || !audienceId) {
     console.error("Newsletter: RESEND_API_KEY or RESEND_AUDIENCE_ID is not configured");
